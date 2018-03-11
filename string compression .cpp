@@ -4,7 +4,7 @@ int main()
 {
 	clrscr();
 	char str[6],comp_str[6];
-	int i=0,ctr=1;
+	int i,ctr=1,j=0;
 	cout<<"enter the string \n";
 	cin>>str;
 	i=1;
@@ -17,16 +17,18 @@ int main()
 		}
 		else
 		{
-			cout<<str[i-1];
-			cout<<ctr;
+			comp_str[j]=str[i-1];
+			comp_str[j+1]=ctr+48;
+			cout<<comp_str<<endl;
+			j+=2;
 			ctr=1;
 		}
 		i++;
 	}
-	cout<<str[i-1]<<ctr<<endl;
-	/*cout<<"the compressed string is \n";
-	cout<<comp_str; */
+	comp_str[j]=str[i-1];
+	comp_str[j+1]=ctr+48;
+	cout<<"the compressed string is \n";
+	cout<<comp_str;
 	getch();
-	/* code */
 	return 0;
 }
