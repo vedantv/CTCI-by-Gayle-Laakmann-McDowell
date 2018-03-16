@@ -9,33 +9,51 @@ int main()
 	cout<<"enter strign 2 \n";
 	getline(cin,s2);
 	int ctr=0,i,j,label[20];
-	for(i=0;i<s2.length();i++)
-	{
-		label[i]=0;
-	}
 	if(s1.length()==s2.length())
     {
-    	for(i=0;i<s1.length();i++)
+    	for(i=0,j=0;i<s1.length()&&j<s2.length();i++,j++)
     	{
-    		for(j=0;j<s2.length();j++)
-    		{
-    			if(s1[i]==s2[j] && label[j]==0)
+    			if(s1[i]!=s2[j] && ctr<=1)
     			{
-    				ctr++;
-    				label[j]+=1;
+    				ctr++;    			
     			}
-    		}
+    			else if(ctr>1)
+    			{
+    				cout<<"not one away";
+    				break;
+    			}
     	}
-    }
-    if(ctr==s2.length())
-    	cout<<"given strings are palindrome of each other already";
+    	if(i==s1.length() && ctr<=1)
+    	{
+    		cout<<"one away";
+    	}
+	}
     else if(s1.length()==s2.length()+1)
     {
-
+    	for(i=0,j=0;i<s1.length()&&j<s2.length();i++,j++)
+    	{
+    			if(s1[i]!=s2[j])
+    			{
+    				cout<<"not one away";
+    				break;   			
+    			}
+    	}
     }
     else if(s1.length()==s2.length()-1)
     {
-
+    	for(i=0,j=0;i<s1.length()&&j<s2.length();i++,j++)
+    	{
+    			if(s1[i]!=s2[j]  && flag==0)
+    			{
+    				flag++;
+    				continue;
+    				j--;
+    			}
+    			else if(flag!=0)
+    			{
+    				cout<<"not one away";
+    			}
+    	}
     }
 
 	s1.length();
