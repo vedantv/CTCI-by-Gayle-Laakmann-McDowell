@@ -6,7 +6,7 @@ int main()
 	string s1,s2;
 	cout<<"enter string 1 \n";
 	getline(cin,s1);
-	cout<<"enter strign 2 \n";
+	cout<<"enter string 2 \n";
 	getline(cin,s2);
 	int ctr=0,i,j,label[20];
 	if(s1.length()==s2.length())
