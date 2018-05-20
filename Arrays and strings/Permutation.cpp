@@ -1,10 +1,11 @@
-#include <iostream.h>
-#include <conio.h>
+#include <iostream>
+#include <string>
+using namespace std;
 int main()
 {
-	clrscr();
+
 	string s1,s2;
-	cout<<"enter two strings";
+	cout<<"enter two strings"<<endl;
 	getline(cin,s1);
 	getline(cin,s2);
 	int l1,l2,*a;
@@ -17,13 +18,30 @@ int main()
 	}
 	else
 	{
-		a =new int[l1];
+		int max=0;
 		for(int i=0;i<l1;i++)
+        {
+            if(max<(s1[i]-95))
+               {
+                   max = s1[i]-95;
+               }
+        }
+
+		a = new int[max];
+		for(int i=0;i<max;i++)
 		{
-			c[]
+			a[i]=0;
+		}
+
+		for(int i=0;i<max;i++)
+		{
+			a[s1[i]-95]++;
+		}
+		for(int i=0;i<max;i++)
+		{
+			cout<<a[i]<<endl;
 		}
 	}
-	
-	getch();
 	return 0;
+
 }
